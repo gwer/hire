@@ -5,10 +5,12 @@
   "private": true,
   "scripts": {
     "dev": "bun src/**/*.html",
-    "build": "bun build src/index.html --outdir ./docs"
+    "build": "bun build src/index.html --outdir ./docs",
+    "build:tailwind": "tailwindcss -i ./src/styles.css -o ./src/tailwind.css --minify"
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "@tailwindcss/cli": "^4.1.10",
     "bun-plugin-tailwind": "^0.0.15",
     "tailwindcss": "^4.1.10"
   },
