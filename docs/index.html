@@ -68,7 +68,7 @@
         person_profiles: 'identified_only',
       });
     </script>
-  <link rel="stylesheet" crossorigin href="./index-8vvgsvz2.css"><script type="module" crossorigin src="./index-eggwhq3g.js"></script></head>
+  <link rel="stylesheet" crossorigin href="./index-3rr24z66.css"><script type="module" crossorigin src="./index-eggwhq3g.js"></script></head>
   <body class="bg-gray-50 text-gray-900">
     <!-- Header -->
     <header class="bg-white shadow-sm top-0 z-50">
@@ -887,13 +887,15 @@
         .addEventListener('submit', function (e) {
           e.preventDefault();
 
-          const webhookUrl =
-            'https://hooks.zapier.com/hooks/catch/23494872/uop8oif/';
-          const formData = new FormData(e.target);
+          const webhookUrl = 'https://api.webholt.ru/api/hire_contact';
+          const formData = new URLSearchParams(new FormData(e.target));
 
           fetch(webhookUrl, {
             method: 'POST',
             body: formData,
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
           })
             .then(() => {
               alert(

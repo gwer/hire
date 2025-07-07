@@ -887,13 +887,15 @@
         .addEventListener('submit', function (e) {
           e.preventDefault();
 
-          const webhookUrl =
-            'https://hooks.zapier.com/hooks/catch/23494872/uop8oif/';
-          const formData = new FormData(e.target);
+          const webhookUrl = 'https://api.webholt.ru/api/hire_contact';
+          const formData = new URLSearchParams(new FormData(e.target));
 
           fetch(webhookUrl, {
             method: 'POST',
             body: formData,
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
           })
             .then(() => {
               alert(
